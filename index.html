@@ -289,18 +289,18 @@
         <div class="modal-content">
           <button class="close-modal" aria-label="Fechar modal" onclick="closeModal('modal-fotos')"><i class="fas fa-times"></i></button>
           <h3><i class="fas fa-camera-retro" style="color: #b59a6d"></i> Nosso Espaço</h3>
-          <p class="modal-desc">Deslize para o lado para ver as fotos </p>
+          <p class="modal-desc">Toque numa foto para ampliar ou deslize para os lados 👉</p>
           <div class="gallery-wrapper">
-            <div class="gallery-item"><img src="img/foto1.jpeg" alt="Recepção" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto2.jpeg" alt="Sala de atendimento" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto3.jpeg" alt="Pilates Cadilac" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto4.jpeg" alt="Pilates Reformer" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto5.jpeg" alt="Espaço amplo" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto6.jpeg" alt="Detalhes" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto7.jpeg" alt="Maca" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto8.jpeg" alt="Acessórios" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto9.jpeg" alt="Fachada" loading="lazy" /></div>
-            <div class="gallery-item"><img src="img/foto10.jpeg" alt="Equipe" loading="lazy" /></div>
+            <div class="gallery-item"><img src="img/foto1.jpeg" alt="Recepção" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto2.jpeg" alt="Sala de atendimento" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto3.jpeg" alt="Pilates Cadilac" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto4.jpeg" alt="Pilates Reformer" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto5.jpeg" alt="Espaço amplo" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto6.jpeg" alt="Detalhes" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto7.jpeg" alt="Maca" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto8.jpeg" alt="Acessórios" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto9.jpeg" alt="Fachada" loading="lazy" onclick="openLightbox(this.src)" /></div>
+            <div class="gallery-item"><img src="img/foto10.jpeg" alt="Equipe" loading="lazy" onclick="openLightbox(this.src)" /></div>
           </div>
         </div>
       </div>
@@ -314,8 +314,14 @@
           <p class="modal-desc">Aponte a câmera para acessar</p>
         </div>
       </div>
+
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-close"><i class="fas fa-times"></i></div>
+        <img class="lightbox-content" id="lightbox-img" alt="Foto ampliada">
+      </div>
+
     </div>
 
-    <script src="script.js?v=12"></script>
+    <script src="script.js?v=13"></script>
   </body>
 </html>

@@ -1,11 +1,9 @@
 // ================= FEEDBACK SENSORIAL =================
-// Vibração removida para evitar incómodos na navegação geral.
 function playPopSound() {
-    // Vazio de propósito para não vibrar nos cliques normais
+    // Vazio para navegação silenciosa
 }
 
 function playSuccessSound() {
-    // Vibra muito suavemente SÓ quando o cliente copia com sucesso o PIX ou o Link
     try { if (navigator.vibrate) navigator.vibrate([10]); } catch(e) {}
 }
 
@@ -74,6 +72,28 @@ function closeModal(modalId) {
         modal.classList.remove('active');
         if (backdrop) backdrop.classList.remove('active');
         if (appScreen) appScreen.classList.remove('cinematic-blur');
+    }
+}
+
+// ================= LIGHTBOX (ABRIR FOTOS) =================
+function openLightbox(src) {
+    playPopSound();
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    if(lightbox && lightboxImg) {
+        lightboxImg.src = src;
+        lightbox.style.display = 'flex';
+        // Pequeno atraso para a transição do CSS atuar
+        setTimeout(() => { lightbox.classList.add('show'); }, 10);
+    }
+}
+
+function closeLightbox() {
+    playPopSound();
+    const lightbox = document.getElementById('lightbox');
+    if(lightbox) {
+        lightbox.classList.remove('show');
+        setTimeout(() => { lightbox.style.display = 'none'; }, 300);
     }
 }
 
@@ -177,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const modais = document.querySelectorAll('.app-modal');
     modais.forEach(modal => {
         
-        // IGNORA TOTALMENTE A FUNÇÃO DE ARRASTAR NO MODAL DE FOTOS
         if (modal.id === 'modal-fotos') return; 
 
         const content = modal.querySelector('.modal-content');

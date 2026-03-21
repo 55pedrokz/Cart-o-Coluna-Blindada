@@ -140,7 +140,7 @@ h1, h2, h3, h4,
     transform: scale(1); 
 }
 
-/* ================= FUNDO PRINCIPAL (AGORA IMÓVEL) ================= */
+/* ================= FUNDO PRINCIPAL ================= */
 .app-screen { 
     position: absolute; 
     top: 0; 
@@ -152,7 +152,7 @@ h1, h2, h3, h4,
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    overflow: hidden; /* O fundo não rola, fica estático colado à parede */
+    overflow: hidden; 
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease; 
     transform-origin: center top;
 }
@@ -162,7 +162,7 @@ h1, h2, h3, h4,
     border-radius: 20px; 
 }
 
-/* ================= CONTEÚDO QUE DESLIZA (O VIDRO TRANSPARENTE) ================= */
+/* ================= CONTEÚDO QUE DESLIZA ================= */
 .content-scroll-wrapper {
     position: absolute; 
     top: 0; 
@@ -244,15 +244,6 @@ h1, h2, h3, h4,
     margin-bottom: 8px; 
     font-weight: 500;
 } 
-.gradient-text { 
-    font-size: 1.8rem; 
-    font-weight: 400; 
-    margin-bottom: 5px; 
-    background: linear-gradient(135deg, var(--brand-green), var(--brand-blue)); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    background-clip: text; 
-}
 .top-header h2 { 
     color: var(--text-sec); 
     font-size: 14px; 
@@ -260,6 +251,7 @@ h1, h2, h3, h4,
     text-transform: uppercase; 
     letter-spacing: 1px; 
     margin-bottom: 18px; 
+    line-height: 1.4;
 } 
 .header-badge { 
     display: inline-block; 
@@ -274,7 +266,6 @@ h1, h2, h3, h4,
     border: 1px solid var(--glass-border); 
     backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px); 
-    font-family: 'Jost', sans-serif;
 }
 .header-badge i { 
     color: var(--brand-blue); 
@@ -282,7 +273,7 @@ h1, h2, h3, h4,
     font-size: 12px;
 }
 
-/* ================= AÇÕES RÁPIDAS ================= */
+/* ================= AÇÕES RÁPIDAS & ANIMAÇÃO PULSO ================= */
 .quick-actions { 
     display: flex; 
     justify-content: center; 
@@ -315,7 +306,7 @@ h1, h2, h3, h4,
     color: var(--brand-blue); 
     margin-bottom: 8px; 
     border: 1px solid var(--glass-border); 
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    transition: all 0.3s; 
     backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px); 
 }
@@ -324,13 +315,27 @@ h1, h2, h3, h4,
     50% { transform: translateY(-5px); } 
     100% { transform: translateY(0px); } 
 }
-.quick-btn:nth-child(1) .icon-circle { animation: flutuar 3s ease-in-out infinite; }
+
+/* ANIMAÇÃO DE PULSO PARA WHATSAPP */
+@keyframes pulse-whatsapp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); transform: translateY(0px); }
+    50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); transform: translateY(-3px); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); transform: translateY(0px); }
+}
+
 .quick-btn:nth-child(2) .icon-circle { animation: flutuar 3s ease-in-out infinite 0.5s; }
 .quick-btn:nth-child(3) .icon-circle { animation: flutuar 3s ease-in-out infinite 1s; }
 .quick-btn:nth-child(4) .icon-circle { animation: flutuar 3s ease-in-out infinite 1.5s; }
 .quick-btn:hover .icon-circle { box-shadow: var(--shadow-hover); border-color: var(--brand-blue);}
 .quick-btn span { color: var(--text-main); font-size: 13px; font-weight: 400;}
-.whatsapp-btn .icon-circle { background: var(--brand-green); color: #fff; border: none;}
+
+/* O botão Whatsapp ganha o destaque */
+.whatsapp-btn .icon-circle { 
+    background: #25D366; 
+    color: #fff; 
+    border: none;
+    animation: pulse-whatsapp 2s infinite !important; 
+}
 .whatsapp-btn span { color: var(--brand-green); font-weight: 500;}
 
 /* ================= MENU DE SERVIÇOS ================= */
@@ -409,7 +414,7 @@ h1, h2, h3, h4,
     font-size: 26px; 
     cursor: pointer; 
     color: var(--text-sec); 
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    transition: all 0.3s; 
     padding: 5px; 
     outline: none; 
     text-decoration: none !important; 
@@ -510,7 +515,7 @@ h1, h2, h3, h4,
 
 .price-list { list-style: none; }
 .price-list li { display: flex; flex-direction: column; padding: 15px 0; border-bottom: 1px dashed #e2e8f0; font-size: 16px;}
-.price-list li strong { color: var(--text-main); margin-bottom: 4px; font-weight: 500; font-family: 'Jost', sans-serif;}
+.price-list li strong { color: var(--text-main); margin-bottom: 4px; font-weight: 500;}
 .price-list li span { color: var(--brand-green); font-weight: 500; font-size: 17px;}
 .price-list li small { color: var(--text-sec); font-size: 14px; font-weight: 400; line-height: 1.4; margin-top: 4px;}
 
@@ -529,7 +534,7 @@ h1, h2, h3, h4,
 .qr-bg img { width: 180px; height: 180px; border-radius: 8px;}
 .text-center { text-align: center; }
 
-/* ================= GALERIA DE FOTOS ================= */
+/* ================= GALERIA DE FOTOS & LIGHTBOX ================= */
 .gallery-wrapper { 
     display: flex; 
     overflow-x: auto; 
@@ -549,15 +554,63 @@ h1, h2, h3, h4,
     box-shadow: var(--shadow-soft); 
     border: 1px solid var(--glass-border); 
 }
-.gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+.gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; cursor: pointer;}
 
-/* PREVINE EFEITO ELÁSTICO NAS FOTOS */
+/* O ECRÃ INTEIRO DA FOTO */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 30, 54, 0.95);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.lightbox.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+.lightbox.show .lightbox-content {
+    transform: scale(1);
+}
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    font-size: 26px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10000;
+}
+
 #modal-fotos .modal-content { overscroll-behavior-y: none; touch-action: pan-x; }
 
 button:focus-visible, a:focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 3px; border-radius: inherit; }
 .quick-btn:active, .list-btn:active, .social-btn:active { transform: scale(0.95) !important; transition: transform 0.1s ease; }
 
-/* ================= BOTÃO WHATSAPP DENTRO DOS MODAIS ================= */
 .whatsapp-modal-btn { 
     display: flex; 
     align-items: center; 
@@ -573,7 +626,6 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--brand-blue); ou
     margin-top: 20px; 
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); 
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
-    font-family: 'Jost', sans-serif; 
 }
 .whatsapp-modal-btn:hover { 
     transform: translateY(-2px); 
