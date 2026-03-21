@@ -1,16 +1,17 @@
-/* ================= VARIÁVEIS GERAIS ================= */
+/* ================= VARIÁVEIS GERAIS E TEMA ================= */
 :root {
+    color-scheme: light; /* Força o telemóvel a usar modo claro */
     --brand-green: #0d9488; 
     --brand-blue: #0284c7;  
     --text-main: #0B1E36; 
-    --text-sec: #3f546d;  /* Cor escurecida para melhor leitura */
+    --text-sec: #3f546d;  
     --card-bg: rgba(255, 255, 255, 0.75); 
     --glass-border: rgba(255, 255, 255, 0.9);
     --shadow-soft: 0 8px 25px rgba(2, 132, 199, 0.08);
     --shadow-hover: 0 12px 30px rgba(13, 148, 136, 0.12);
 }
 
-/* ================= CONFIGURAÇÃO DE FONTES (VIBE BOUTIQUE) ================= */
+/* ================= CONFIGURAÇÃO DE FONTES ================= */
 * { 
     margin: 0; 
     padding: 0; 
@@ -20,12 +21,14 @@
     -webkit-tap-highlight-color: transparent; 
 }
 
+/* MUDANÇA AQUI: Tirado o cinzento escuro que aparecia na "puxada" elástica */
 html, body { 
     width: 100%; 
     height: 100%; 
     overflow: hidden; 
-    background: #cbd5e1; 
+    background: #f8fafc; /* Agora é branco clarinho, o cinzento não aparece mais! */
     scroll-behavior: smooth; 
+    overscroll-behavior: none; /* Proíbe o telemóvel de fazer o efeito elástico para mostrar fundos falsos */
 }
 
 /* Títulos elegantes com Marcellus */
@@ -79,6 +82,7 @@ h1, h2, h3, h4,
     background-repeat: no-repeat; 
     display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; 
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease; transform-origin: center top;
+    overscroll-behavior-y: none; /* Corta totalmente o efeito de arrasto para baixo na imagem principal */
 }
 .app-screen.cinematic-blur { transform: scale(0.95) translateY(10px); filter: blur(5px) brightness(0.8); border-radius: 20px; }
 
@@ -188,6 +192,12 @@ h1, h2, h3, h4,
 .app-screen::-webkit-scrollbar { display: none; }
 .app-screen { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* PREVINE EFEITO ELÁSTICO NAS FOTOS */
+#modal-fotos .modal-content {
+    overscroll-behavior-y: none;
+    touch-action: pan-x;
+}
+
 button:focus-visible, a:focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 3px; border-radius: inherit; }
 .quick-btn:active, .list-btn:active, .social-btn:active { transform: scale(0.95) !important; transition: transform 0.1s ease; }
 
@@ -218,9 +228,4 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--brand-blue); ou
 
 .whatsapp-modal-btn i {
     font-size: 20px;
-}
-/* ================= PREVENIR EFEITO ELÁSTICO NAS FOTOS ================= */
-#modal-fotos .modal-content {
-    overscroll-behavior-y: none;
-    touch-action: pan-x; /* Permite apenas arrastar para os lados */
 }
