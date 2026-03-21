@@ -2,31 +2,19 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
     <meta name="color-scheme" content="light" />
 
     <title>Coluna Blindada - Fisioterapia Integral</title>
-    <meta
-      name="description"
-      content="Especialistas em Reabilitação, Quiropraxia e Pilates. Agende a sua avaliação!"
-    />
+    <meta name="description" content="Especialistas em Reabilitação, Quiropraxia e Pilates. Agende a sua avaliação!" />
 
-    <meta name="theme-color" content="#f8fafc" />
+    <meta name="theme-color" content="#0B1E36" />
     <link rel="icon" href="img/Logo.jpg" type="image/jpeg" />
     <link rel="preload" as="image" href="img/Logo.jpg" />
 
-    <meta
-      property="og:title"
-      content="Coluna Blindada - Fisioterapia Integral"
-    />
-    <meta
-      property="og:description"
-      content="Especialistas em Reabilitação, Quiropraxia e Pilates. Clique aqui para agendar a sua avaliação!"
-    />
+    <meta property="og:title" content="Coluna Blindada - Fisioterapia Integral" />
+    <meta property="og:description" content="Especialistas em Reabilitação, Quiropraxia e Pilates. Clique aqui para agendar a sua avaliação!" />
     <meta property="og:image" content="https://seusite.com/img/Logo.jpg" />
     <meta property="og:type" content="website" />
 
@@ -34,10 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -56,52 +41,32 @@
       <div class="app-screen" id="app-background">
         
         <div id="splash-screen" class="splash-screen">
-          <img
-            src="img/Logo.jpg"
-            alt="Carregando Coluna Blindada"
-            class="splash-logo"
-          />
+          <img src="img/Logo.jpg" alt="Carregando Coluna Blindada" class="splash-logo" />
         </div>
 
         <div class="content-scroll-wrapper">
             <header class="top-header reveal-item">
               <div class="profile-image-wrapper">
-                <img
-                  src="img/Logo.jpg"
-                  alt="Logotipo Coluna Blindada"
-                  class="profile-img"
-                  loading="lazy"
-                />
+                <img src="img/Logo.jpg" alt="Logotipo Coluna Blindada" class="profile-img" loading="lazy" />
               </div>
 
               <p id="mensagem-saudacao" class="saudacao">Olá!</p>
-              <h1 class="gradient-text">Coluna Blindada</h1>
-              <h2>Fisioterapia Integral</h2>
+              
+              <h1 style="color: var(--brand-green); font-size: 1.9rem; margin-bottom: 5px;">Coluna Blindada</h1>
+              <h2>Fisioterapia & Reabilitação</h2>
+              
               <div class="header-badge">
                 <i class="fas fa-map-marker-alt"></i> Pindamonhangaba/SP
               </div>
             </header>
 
-            <section
-              class="quick-actions reveal-item"
-              style="transition-delay: 0.1s"
-            >
-              <a
-                href="https://wa.me/5512997325180?text=Ol%C3%A1!%20Vim%20pelo%20cart%C3%A3o%20interativo%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Coluna%20Blindada."
-                class="quick-btn whatsapp-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <section class="quick-actions reveal-item" style="transition-delay: 0.1s">
+              <a href="https://wa.me/5512997325180?text=Ol%C3%A1!%20Estava%20a%20ver%20o%20cart%C3%A3o%20interativo%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Coluna%20Blindada." class="quick-btn whatsapp-btn" target="_blank" rel="noopener noreferrer">
                 <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
                 <span>Agendar</span>
               </a>
 
-              <a
-                href="https://maps.google.com/?q=Av.+São+Paulo,+482+-+Cidade+Nova,+Pindamonhangaba"
-                class="quick-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://maps.google.com/?q=Av.+São+Paulo,+482+-+Cidade+Nova,+Pindamonhangaba" class="quick-btn" target="_blank" rel="noopener noreferrer">
                 <div class="icon-circle"><i class="fas fa-location-dot"></i></div>
                 <span>Localização</span>
               </a>
@@ -120,22 +85,30 @@
             </section>
 
             <main class="services-menu reveal-item" style="transition-delay: 0.2s">
-              <button class="list-btn tilt-card" onclick="openModal('modal-fisio')">
+              
+              <button class="list-btn tilt-card" onclick="openModal('modal-quemsomos')">
                 <div class="list-icon icon-green">
-                  <i class="fas fa-user-md"></i>
+                  <i class="fas fa-users"></i>
                 </div>
                 <div class="list-text">
-                  <h3>Clínica e Fisioterapia</h3>
-                  <p>Avaliações, Quiropraxia, RPG...</p>
+                  <h3 style="margin-bottom: 0;">Quem Somos</h3>
                 </div>
                 <i class="fas fa-chevron-right arrow"></i>
               </button>
 
-              <button
-                class="list-btn tilt-card"
-                onclick="openModal('modal-pilates')"
-              >
+              <button class="list-btn tilt-card" onclick="openModal('modal-fisio')">
                 <div class="list-icon icon-blue">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                <div class="list-text">
+                  <h3>Clínica e Fisioterapia</h3>
+                  <p>Reabilitação (Fase 1, 2 e 3), Quiropraxia...</p>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+              </button>
+
+              <button class="list-btn tilt-card" onclick="openModal('modal-pilates')">
+                <div class="list-icon icon-purple">
                   <i class="fas fa-running"></i>
                 </div>
                 <div class="list-text">
@@ -145,21 +118,7 @@
                 <i class="fas fa-chevron-right arrow"></i>
               </button>
 
-              <button class="list-btn tilt-card" onclick="openModal('modal-fotos')">
-                <div class="list-icon icon-purple">
-                  <i class="fas fa-camera-retro"></i>
-                </div>
-                <div class="list-text">
-                  <h3>O Nosso Espaço</h3>
-                  <p>Conheça nossa clínica</p>
-                </div>
-                <i class="fas fa-chevron-right arrow"></i>
-              </button>
-
-              <button
-                class="list-btn tilt-card"
-                onclick="openModal('modal-estetica')"
-              >
+              <button class="list-btn tilt-card" onclick="openModal('modal-estetica')">
                 <div class="list-icon icon-orange"><i class="fas fa-spa"></i></div>
                 <div class="list-text">
                   <h3>Estética e Parceiros</h3>
@@ -168,11 +127,19 @@
                 <i class="fas fa-chevron-right arrow"></i>
               </button>
 
-              <button
-                class="list-btn highlight-btn tilt-card"
-                onclick="openModal('modal-info')"
-              >
-                <div class="list-icon icon-dark"><i class="far fa-clock"></i></div>
+              <button class="list-btn tilt-card" onclick="openModal('modal-fotos')">
+                <div class="list-icon icon-dark">
+                  <i class="fas fa-camera-retro"></i>
+                </div>
+                <div class="list-text">
+                  <h3>O Nosso Espaço</h3>
+                  <p>Conheça a nossa clínica</p>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+              </button>
+
+              <button class="list-btn tilt-card" onclick="openModal('modal-info')">
+                <div class="list-icon icon-dark" style="background: rgba(15, 23, 42, 0.05);"><i class="far fa-clock"></i></div>
                 <div class="list-text">
                   <h3>Horários e Pagamento</h3>
                   <p>Funcionamento e formas aceitas</p>
@@ -181,41 +148,17 @@
               </button>
             </main>
 
-            <footer
-              class="social-footer reveal-item"
-              style="transition-delay: 0.3s"
-            >
-              <a
-                href="https://www.instagram.com/fisiocoluna_blindada/"
-                class="social-btn insta"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <button
-                id="btn-pix"
-                class="social-btn pix"
-                data-chave="12997325180"
-                title="Copiar PIX"
-                aria-label="Copiar Chave PIX"
-              >
+            <footer class="social-footer reveal-item" style="transition-delay: 0.3s">
+              <a href="https://www.instagram.com/fisiocoluna_blindada/" class="social-btn insta" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <button id="btn-pix" class="social-btn pix" data-chave="12997325180" title="Copiar PIX" aria-label="Copiar Chave PIX">
                 <i id="icon-pix" class="fab fa-pix"></i>
               </button>
-              <button
-                id="btn-share"
-                class="social-btn share"
-                title="Compartilhar"
-                aria-label="Compartilhar Cartão"
-              >
+              <button id="btn-share" class="social-btn share" title="Compartilhar" aria-label="Compartilhar Cartão">
                 <i id="icon-share" class="fas fa-share-nodes"></i>
               </button>
-              <button
-                id="btn-qr"
-                class="social-btn qr"
-                title="QR Code"
-                aria-label="Mostrar QR Code"
-              >
+              <button id="btn-qr" class="social-btn qr" title="QR Code" aria-label="Mostrar QR Code">
                 <i class="fas fa-qrcode"></i>
               </button>
             </footer>
@@ -223,6 +166,53 @@
       </div>
 
       <div id="modal-backdrop" class="modal-backdrop"></div>
+
+      <div id="modal-quemsomos" class="app-modal">
+        <div class="modal-content">
+          <div class="drag-line"></div>
+          <button class="close-modal" aria-label="Fechar modal" onclick="closeModal('modal-quemsomos')"><i class="fas fa-times"></i></button>
+          
+          <h3><i class="fas fa-users" style="color: var(--brand-green)"></i> Quem Somos</h3>
+          
+          <div style="text-align: center; margin-bottom: 20px;">
+              <p style="color: var(--brand-green); font-weight: 500; font-size: 18px; font-family: 'Marcellus', serif;">Está com dor na coluna?</p>
+              <p style="color: var(--text-sec); font-size: 15px; margin-top: 5px;">Travamento, hérnia, ciático, tensão muscular ou dor crônica?</p>
+          </div>
+
+          <div class="info-card">
+              <h4><i class="fas fa-hand-holding-medical" style="color: var(--brand-green);"></i> Na Coluna Blindada utilizamos:</h4>
+              <ul class="simple-list" style="margin-top: 0;">
+                  <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Protocolo especializado para coluna</li>
+                  <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Técnicas modernas de fisioterapia</li>
+                  <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Tratamento individualizado</li>
+                  <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Foco em alívio da dor e fortalecimento</li>
+                  <li><i class="fas fa-check-circle" style="color: #25D366;"></i> Prevenção de novas lesões</li>
+              </ul>
+          </div>
+
+          <div class="info-card">
+              <h4><i class="fas fa-star-of-life" style="color: var(--brand-green);"></i> Atendimento focado com:</h4>
+              <ul class="simple-list">
+                  <li><i class="fas fa-check" style="color: var(--brand-blue);"></i> Avaliação completa</li>
+                  <li><i class="fas fa-check" style="color: var(--brand-blue);"></i> Exercícios terapêuticos específicos</li>
+                  <li><i class="fas fa-check" style="color: var(--brand-blue);"></i> Liberação muscular e mobilização articular</li>
+                  <li><i class="fas fa-check" style="color: var(--brand-blue);"></i> Reeducação postural</li>
+                  <li><i class="fas fa-check" style="color: var(--brand-blue);"></i> Fortalecimento da coluna</li>
+              </ul>
+          </div>
+          
+          <div style="text-align: center; margin-top: 20px;">
+              <p style="font-weight: 500; color: var(--brand-green); font-size: 18px; font-family: 'Marcellus', serif;">Dra. Ana Paula de Oliveira</p>
+              <p style="color: var(--text-sec); font-size: 14px; margin-bottom: 5px;">Fisioterapia Integral e Reabilitação</p>
+              <p style="color: var(--brand-blue); font-size: 14px; font-weight: 500; margin-bottom: 15px;">💠 Método exclusivo: COLUNA BLINDADA</p>
+              <p style="font-weight: 500; color: var(--text-main); font-size: 15px;">Fortaleça • Proteja • Recupere sua coluna</p>
+          </div>
+          
+          <a href="https://wa.me/5512997325180?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Coluna%20Blindada." class="whatsapp-modal-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> Agendar Avaliação
+          </a>
+        </div>
+      </div>
 
       <div id="modal-faq" class="app-modal">
         <div class="modal-content">
@@ -244,6 +234,7 @@
           <h3><i class="fas fa-user-md"></i> Fisioterapia</h3>
           <ul class="price-list">
             <li><strong>Avaliação da Coluna c/ sessão</strong> <span>R$ 100,00</span></li>
+            <li><strong>Reabilitação (Fases 1, 2 e 3)</strong> <span style="font-size: 15px; color: var(--text-sec); font-weight: 400;">Tratamento especializado</span></li>
             <li><strong>Sessões de Quiropraxia</strong> <span>R$ 100,00</span></li>
             <li><strong>Consulta de Ortopedia</strong><span>R$ 70,00 <br /><small>Sessões R$ 50,00 | Pacote 10x R$ 570,00</small></span></li>
             <li><strong>Avaliação Neurológica</strong><span>R$ 100,00 <br /><small>Sessões R$ 50,00 cada</small></span></li>
@@ -298,7 +289,7 @@
         <div class="modal-content">
           <button class="close-modal" aria-label="Fechar modal" onclick="closeModal('modal-fotos')"><i class="fas fa-times"></i></button>
           <h3><i class="fas fa-camera-retro" style="color: #b59a6d"></i> Nosso Espaço</h3>
-          <p class="modal-desc">Deslize para o lado para ver as fotos </p>
+          <p class="modal-desc">Deslize para o lado para ver as fotos 👉</p>
           <div class="gallery-wrapper">
             <div class="gallery-item"><img src="img/foto1.jpeg" alt="Recepção" loading="lazy" /></div>
             <div class="gallery-item"><img src="img/foto2.jpeg" alt="Sala de atendimento" loading="lazy" /></div>
@@ -325,6 +316,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=11"></script>
   </body>
 </html>

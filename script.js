@@ -1,11 +1,11 @@
 // ================= FEEDBACK SENSORIAL =================
-// Vibração removida para não irritar durante a navegação das fotos.
+// Vibração removida para evitar incómodos na navegação geral.
 function playPopSound() {
-    // Vazio de propósito para não vibrar
+    // Vazio de propósito para não vibrar nos cliques normais
 }
 
 function playSuccessSound() {
-    // Mantive apenas uma vibração muito suave SÓ quando copia o PIX ou o Link com sucesso
+    // Vibra muito suavemente SÓ quando o cliente copia com sucesso o PIX ou o Link
     try { if (navigator.vibrate) navigator.vibrate([10]); } catch(e) {}
 }
 
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modais = document.querySelectorAll('.app-modal');
     modais.forEach(modal => {
         
-        // CORREÇÃO AQUI: Se for o modal de fotos, ignora o código de arrastar!
+        // IGNORA TOTALMENTE A FUNÇÃO DE ARRASTAR NO MODAL DE FOTOS
         if (modal.id === 'modal-fotos') return; 
 
         const content = modal.querySelector('.modal-content');
