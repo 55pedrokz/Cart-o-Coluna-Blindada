@@ -1,6 +1,6 @@
 /* ================= VARIÁVEIS GERAIS E TEMA ================= */
 :root {
-    color-scheme: light; /* Força o telemóvel a usar modo claro */
+    color-scheme: light; 
     --brand-green: #0d9488; 
     --brand-blue: #0284c7;  
     --text-main: #0B1E36; 
@@ -21,16 +21,16 @@
     -webkit-tap-highlight-color: transparent; 
 }
 
+/* Bloqueia o "bounce" na janela inteira do navegador para segurança extra */
 html, body { 
     width: 100%; 
     height: 100%; 
     overflow: hidden; 
-    background: #f8fafc; 
+    background-color: #0B1E36; 
     scroll-behavior: smooth; 
-    overscroll-behavior: none; /* Proíbe o telemóvel de fazer o efeito elástico no corpo principal */
+    overscroll-behavior: none; 
 }
 
-/* Títulos elegantes com Marcellus */
 h1, h2, h3, h4, 
 .saudacao, 
 .gradient-text,
@@ -41,25 +41,16 @@ h1, h2, h3, h4,
     letter-spacing: 0.5px;
 }
 
-/* ================= MOCKUP DO TELEMÓVEL (COMPUTADOR E MOBILE) ================= */
+/* ================= MOCKUP DO TELEMÓVEL ================= */
 @media (min-width: 1025px) {
     body { display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%); perspective: 1000px;}
-    .phone-mockup { 
-        position: relative; width: 380px; height: 820px; 
-        background-image: url('assets/fundo2.jpeg'); /* TRUQUE: Fundo clonado aqui atrás */
-        background-size: cover; background-position: center; background-color: #000; 
-        border-radius: 40px; border: 12px solid #ffffff; box-shadow: 0 30px 60px rgba(0,0,0,0.15); overflow: hidden; z-index: 2; 
-    }
+    .phone-mockup { position: relative; width: 380px; height: 820px; background-color: #0B1E36; border-radius: 40px; border: 12px solid #ffffff; box-shadow: 0 30px 60px rgba(0,0,0,0.15); overflow: hidden; z-index: 2; }
     .mockup-shadow { position: absolute; bottom: calc(50% - 420px); width: 260px; height: 30px; background: rgba(0, 0, 0, 0.15); border-radius: 50%; filter: blur(15px); z-index: 1; }
     .notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 130px; height: 25px; background-color: #ffffff; border-radius: 0 0 15px 15px; z-index: 1000; box-shadow: inset 0 -2px 5px rgba(0,0,0,0.05);}
 }
 
 @media (max-width: 1024px) {
-    .phone-mockup { 
-        width: 100%; height: 100%; border: none; border-radius: 0; box-shadow: none; 
-        background-image: url('assets/fundo2.jpeg'); /* TRUQUE: Fundo clonado aqui atrás */
-        background-size: cover; background-position: center; background-color: #000; 
-    }
+    .phone-mockup { width: 100%; height: 100%; border: none; border-radius: 0; box-shadow: none; background-color: #0B1E36; }
     .notch, .mockup-shadow { display: none; }
 }
 
@@ -73,35 +64,32 @@ h1, h2, h3, h4,
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 .dynamic-island.show { width: 180px; height: 45px; opacity: 1; pointer-events: auto; }
-.island-content {
-    display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 14px; color: #fff;
-    opacity: 0; transform: scale(0.8); transition: opacity 0.3s 0.2s, transform 0.3s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    white-space: nowrap;
-}
+.island-content { display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 14px; color: #fff; opacity: 0; transform: scale(0.8); transition: opacity 0.3s 0.2s, transform 0.3s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); white-space: nowrap; }
 .dynamic-island.show .island-content { opacity: 1; transform: scale(1); }
 
-/* ================= FUNDO PRINCIPAL ================= */
+/* ================= FUNDO PRINCIPAL (AGORA IMÓVEL) ================= */
 .app-screen { 
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-image: url('assets/fundo2.jpeg'); 
-    background-color: transparent; /* Deixamos transparente para mostrar o fundo clonado se houver puxão */
+    background-color: #0B1E36; 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; 
+    overflow: hidden; /* O fundo não rola, fica perfeitamente estático */
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease; transform-origin: center top;
-    overscroll-behavior-y: none; /* Corta totalmente o efeito de arrasto para baixo na imagem principal */
 }
 .app-screen.cinematic-blur { transform: scale(0.95) translateY(10px); filter: blur(5px) brightness(0.8); border-radius: 20px; }
 
-/* ================= REVELAÇÃO CINEMATOGRÁFICA ================= */
-.reveal-item {
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* ================= CONTEÚDO QUE DESLIZA (TRUQUE DO ELÁSTICO) ================= */
+.content-scroll-wrapper {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; 
+    display: flex; flex-direction: column;
 }
-.reveal-item.visible { opacity: 1; transform: translateY(0); }
 
-/* ================= SPLASH SCREEN ================= */
+/* ================= REVELAÇÃO E SPLASH ================= */
+.reveal-item { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-item.visible { opacity: 1; transform: translateY(0); }
 .splash-screen { position: absolute; inset: 0; background: #ffffff; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.6s ease; }
 .splash-logo { width: 150px; height: 150px; object-fit: contain; animation: pulseLogo 1.5s infinite; border-radius: 50%; }
 .hide-splash { opacity: 0; pointer-events: none; }
@@ -197,43 +185,14 @@ h1, h2, h3, h4,
 .gallery-wrapper::-webkit-scrollbar { display: none; }
 .gallery-item { flex: 0 0 85%; scroll-snap-align: center; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-soft); border: 1px solid var(--glass-border); }
 .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
-.app-screen::-webkit-scrollbar { display: none; }
-.app-screen { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* PREVINE EFEITO ELÁSTICO NAS FOTOS */
-#modal-fotos .modal-content {
-    overscroll-behavior-y: none;
-    touch-action: pan-x;
-}
+#modal-fotos .modal-content { overscroll-behavior-y: none; touch-action: pan-x; }
 
 button:focus-visible, a:focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 3px; border-radius: inherit; }
 .quick-btn:active, .list-btn:active, .social-btn:active { transform: scale(0.95) !important; transition: transform 0.1s ease; }
 
-/* ================= BOTÃO WHATSAPP DENTRO DOS MODAIS ================= */
-.whatsapp-modal-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    font-family: 'Jost', sans-serif;
-}
-
-.whatsapp-modal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    color: white;
-}
-
-.whatsapp-modal-btn i {
-    font-size: 20px;
-}
+/* ================= BOTÃO WHATSAPP ================= */
+.whatsapp-modal-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #25D366; color: white; text-decoration: none; padding: 14px; border-radius: 12px; font-size: 16px; font-weight: 500; margin-top: 20px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: transform 0.2s ease, box-shadow 0.2s ease; font-family: 'Jost', sans-serif; }
+.whatsapp-modal-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); color: white; }
+.whatsapp-modal-btn i { font-size: 20px; }
