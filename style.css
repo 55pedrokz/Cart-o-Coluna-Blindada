@@ -41,7 +41,7 @@ h1, h2, h3, h4,
     letter-spacing: 0.5px;
 }
 
-/* ================= MOCKUP DO TELEMÓVEL ================= */
+/* ================= MOCKUP DO CELULAR ================= */
 @media (min-width: 1025px) {
     body { 
         display: flex; 
@@ -556,7 +556,7 @@ h1, h2, h3, h4,
 }
 .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; cursor: pointer;}
 
-/* O ECRÃ INTEIRO DA FOTO */
+/* A TELA INTEIRA DA FOTO */
 .lightbox {
     display: none;
     position: fixed;
