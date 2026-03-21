@@ -219,3 +219,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--brand-blue); ou
 .whatsapp-modal-btn i {
     font-size: 20px;
 }
+/* ================= PREVENIR EFEITO ELÁSTICO NAS FOTOS ================= */
+#modal-fotos .modal-content {
+    overscroll-behavior-y: none;
+    touch-action: pan-x; /* Permite apenas arrastar para os lados */
+}
