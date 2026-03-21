@@ -1,13 +1,12 @@
 // ================= FEEDBACK SENSORIAL =================
-// Som removido para manter a elegância. 
-// Mantido apenas a vibração suave (haptic feedback) no telemóvel.
-
+// Vibração removida para não irritar durante a navegação das fotos.
 function playPopSound() {
-    try { if (navigator.vibrate) navigator.vibrate(5); } catch(e) {}
+    // Vazio de propósito para não vibrar
 }
 
 function playSuccessSound() {
-    try { if (navigator.vibrate) navigator.vibrate([10, 20]); } catch(e) {}
+    // Mantive apenas uma vibração muito suave SÓ quando copia o PIX ou o Link com sucesso
+    try { if (navigator.vibrate) navigator.vibrate([10]); } catch(e) {}
 }
 
 // ================= ILHA DINÂMICA =================
@@ -177,6 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modais = document.querySelectorAll('.app-modal');
     modais.forEach(modal => {
+        
+        // CORREÇÃO AQUI: Se for o modal de fotos, ignora o código de arrastar!
+        if (modal.id === 'modal-fotos') return; 
+
         const content = modal.querySelector('.modal-content');
         let startY = 0; let currentY = 0; let isDragging = false;
 
@@ -209,7 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 content.style.transform = 'translateY(0)';
                 const backdrop = document.getElementById('modal-backdrop');
                 if(backdrop) backdrop.style.opacity = '1';
-                playPopSound(); 
             }
             startY = 0; currentY = 0;
         });
