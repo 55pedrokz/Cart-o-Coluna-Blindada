@@ -171,11 +171,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnShare = document.getElementById('btn-share');
     if (btnShare) {
         btnShare.addEventListener('click', async () => {
-            const shareData = { title: 'Coluna Blindada', text: 'Liberte-se das dores! Agende a sua avaliação.', url: window.location.href };
             try {
-                if (navigator.share) { await navigator.share(shareData); } else {
+                const shareData = { 
+                    title: 'Coluna Blindada', 
+                    text: 'Liberte-se das dores! Agende a sua avaliação na Coluna Blindada.', 
+                    url: window.location.href 
+                };
+
+                // Tenta carregar a imagem da logo
+                try {
+                    const response = await fetch('img/Logo.jpg');
+                    const blob = await response.blob();
+                    const file = new File([blob], 'Logo.jpg', { type: blob.type });
+                    
+                    // Se o navegador suportar o envio de arquivos, anexa a imagem
+                    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                        shareData.files = [file];
+                    }
+                } catch (imgErr) {
+                    console.log('Não foi possível anexar a imagem:', imgErr);
+                }
+
+                // Abre a janela de partilha
+                if (navigator.share) { 
+                    await navigator.share(shareData); 
+                } else {
                     morphIcon('icon-share', 'fas fa-check', 'fas fa-share-nodes');
-                    fallbackCopiar(window.location.href); showDynamicIsland('Link copiado!');
+                    fallbackCopiar(window.location.href); 
+                    showDynamicIsland('Link copiado!');
                 }
             } catch (err) {}
         });
